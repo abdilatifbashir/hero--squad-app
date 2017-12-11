@@ -9,7 +9,7 @@ public class Squad{
   private int mId;
   private List<Hero> mHeros;
 
-  
+
   public Squad(int Maxsize, String Name, String Cause){
      mMaxSize = Maxsize;
      mName = Name;
@@ -37,7 +37,7 @@ public class Squad{
   public static void clear(){
     instances.clear();
   }
-  public void addHero(hero){
+  public void addHero(Hero hero){
     mHeros.add(hero);
   }
   public List<Hero> getHeros() {
