@@ -1,5 +1,4 @@
-## this is app that allows you to recruit a well-balanced team of superheroes
-## Tech Used
+## this is app that allows you to recruit a well-balanced team of superheroes.
 
 ## Setup and installation
 * Open terminal and type the following commands:
