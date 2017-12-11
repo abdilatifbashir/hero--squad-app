@@ -1,0 +1,24 @@
+<div>
+         #if ($squads.size()> 0)
+           <ul>
+             #foreach ($squad in $squads)
+               <li><a href="/squads/$squad.getId()">
+                   <div class="row">
+                       <div class="col-md-3">
+                           $squad.getName()
+                       </div>
+                       <div class="col-md-3">
+                          $squad.getMaxSize()
+                       </div>
+                       <div class="col-md-6">
+                          $squad.getCause()
+                       </div>
+                   </div>
+               </a></li>
+               <hr noshade>
+             #end
+           </ul>
+         #else
+          <p>No Squad!</p>
+         #end
+     </div>
