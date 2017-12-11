@@ -1,16 +1,22 @@
 <div class="squadlist">list of your squads</div>
-<table>
-    <tr>
-    <th>name</th>
-      <th>maximum size</th>
-        <th>cause of squad</th>
+<div class="row text-color">
+             <div class="col-md-4">
+                NAME
+             </div>
+             <div class="col-md-2">
+                MAX SIZE
+             </div>
+             <div class="col-md-6">
+                CAUSE
+             </div>
+         </div>
 
-    </tr>
+
          #if ($squads.size()> 0)
            <ul>
              #foreach ($squad in $squads)
                <li><a href="/squads/$squad.getId()">
-                   <div class="row">
+                   <div class="row text-squad-rw">
                        <div class="col-md-3">
                            $squad.getName()
                        </div>
