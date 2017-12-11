@@ -9,3 +9,11 @@ body{
   font-style: italic;
   font-size: 20px;
 }
+.alignment{text-align: center;
+font-size: 20px;}
+
+.squadlist{
+  text-align: center;
+  color:white;
+  font-size:20px;
+}

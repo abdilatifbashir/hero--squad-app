@@ -1,4 +1,11 @@
-<div>
+<div class="squadlist">list of your squads</div>
+<table>
+    <tr>
+    <th>name</th>
+      <th>maximum size</th>
+        <th>cause of squad</th>
+
+    </tr>
          #if ($squads.size()> 0)
            <ul>
              #foreach ($squad in $squads)
@@ -22,3 +29,6 @@
           <p>No Squad!</p>
          #end
      </div>
+     </table>
+
+     <div class="btn btn-lg"><a href="/squads/new">add new squad again</a></div>
