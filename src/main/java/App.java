@@ -66,6 +66,14 @@ public class App {
         }, new VelocityTemplateEngine());
 
 
+             get("/squad-heros", (request, response) -> {
+          Map<String, Object> model = new HashMap<String, Object>();
+          model.put("heros", Hero.all());
+          model.put("template", "templates/hero.vtl");
+          return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+
      post("/squad-heros", (request, response) -> {
          Map<String, Object> model = new HashMap<String, Object>();
          Squad squad = Squad.find(Integer.parseInt(request.queryParams("squad-H-id")));
@@ -79,6 +87,7 @@ public class App {
          model.put("template", "templates/success.vtl");
          return new ModelAndView(model, layout);
        }, new VelocityTemplateEngine());
+
 
 
 

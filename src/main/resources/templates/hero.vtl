@@ -1,0 +1,43 @@
+<div>list of your heros</div>
+<div class="row text-color">
+             <div class="col-md-4">
+                NAME
+             </div>
+             <div class="col-md-2">
+                MAX SIZE
+             </div>
+             <div class="col-md-6">
+                CAUSE
+             </div>
+         </div>
+
+
+         #if ($heros.size()> 0)
+           <ul>
+             #foreach ($hero in $heros)
+               <li><a href="/heros/$hero.getId()">
+                   <div class="row text-squad-rw">
+                       <div class="col-md-3">
+                           $hero.getName()
+                       </div>
+                       <div class="col-md-3">
+                          $hero.getAge()
+                       </div>
+                       <div class="col-md-6">
+                          $hero.getSpecialPower()
+                       </div>
+                       <div class="col-md-6">
+                          $hero.getWeakness()
+                       </div>
+                   </div>
+               </a></li>
+               <hr noshade>
+             #end
+           </ul>
+         #else
+          <p>No Squad!</p>
+         #end
+     </div>
+     </table>
+
+     <div class="btn btn-lg"><a href="/squads/new">add new squad again</a></div>
