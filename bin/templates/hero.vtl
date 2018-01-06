@@ -1,4 +1,4 @@
-<div class="squadlist">list of your squads</div>
+<div>list of your heros</div>
 <div class="row text-color">
              <div class="col-md-4">
                 NAME
@@ -12,19 +12,22 @@
          </div>
 
 
-         #if ($squads.size()> 0)
+         #if ($heros.size()> 0)
            <ul>
-             #foreach ($squad in $squads)
-               <li><a href="/squads/$squad.getId()">
+             #foreach ($hero in $heros)
+               <li><a href="/heros/$hero.getId()">
                    <div class="row text-squad-rw">
                        <div class="col-md-3">
-                           $squad.getName()
+                           $hero.getName()
                        </div>
                        <div class="col-md-3">
-                          $squad.getMaxSize()
+                          $hero.getAge()
                        </div>
                        <div class="col-md-6">
-                          $squad.getCause()
+                          $hero.getSpecialPower()
+                       </div>
+                       <div class="col-md-6">
+                          $hero.getWeakness()
                        </div>
                    </div>
                </a></li>
@@ -38,4 +41,3 @@
      </table>
 
      <div class="btn btn-lg"><a href="/squads/new">add new squad again</a></div>
-     <p style="color:blue">click on the squad above to include its heros</p>
