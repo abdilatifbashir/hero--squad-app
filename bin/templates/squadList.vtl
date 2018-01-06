@@ -1,0 +1,40 @@
+<div class="squadlist">list of your squads</div>
+<div class="row text-color">
+             <div class="col-md-4">
+                NAME
+             </div>
+             <div class="col-md-2">
+                MAX SIZE
+             </div>
+             <div class="col-md-6">
+                CAUSE
+             </div>
+         </div>
+
+
+         #if ($squads.size()> 0)
+           <ul>
+             #foreach ($squad in $squads)
+               <li><a href="/squads/$squad.getId()">
+                   <div class="row text-squad-rw">
+                       <div class="col-md-3">
+                           $squad.getName()
+                       </div>
+                       <div class="col-md-3">
+                          $squad.getMaxSize()
+                       </div>
+                       <div class="col-md-6">
+                          $squad.getCause()
+                       </div>
+                   </div>
+               </a></li>
+               <hr noshade>
+             #end
+           </ul>
+         #else
+          <p>No Squad!</p>
+         #end
+     </div>
+     </table>
+
+     <div class="btn btn-lg"><a href="/squads/new">add new squad again</a></div>

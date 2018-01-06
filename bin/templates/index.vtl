@@ -5,14 +5,5 @@
     <p class="para">with this APP you can keep track of your heros list</p>
     </div>
   </div>
-  #if($squads)
-    <p>You have the following Squads:</p>
-    <p>Click on the name for more details</p>
-    #foreach ($squad in $squads)
-        <p>$squad.getId()<span>.</span> <a href="/squad/$squad.getId()">$squad.getName()</a></p>
-    #end
-#else
-    <p>You have no squads at the moment.</p>
-#end
 
 <a href="/squads/new"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Create Squad</button></a>

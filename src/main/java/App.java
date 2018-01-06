@@ -45,9 +45,40 @@ public class App {
             String Desc = request.queryParams("squad-cause");
             Squad newSquad = new Squad(maxNum, name, Desc);
             model.put("template", "templates/success.vtl");
-            
+
             return new ModelAndView(model, layout);
           }, new VelocityTemplateEngine());
+
+          get("/squads/:id", (request, response) -> {
+           Map<String, Object> model = new HashMap<String, Object>();
+           Squad squad = Squad.find(Integer.parseInt(request.params(":id")));
+           model.put("squad", squad);
+           model.put("template", "templates/squad.vtl");
+           return new ModelAndView(model, layout);
+         }, new VelocityTemplateEngine());
+
+         get("squads/:id/newhero", (request, response) -> {
+          Map<String, Object> model = new HashMap<String, Object>();
+          Squad squad = Squad.find(Integer.parseInt(request.params(":id")));
+          model.put("squad", squad);
+          model.put("template", "templates/squad-hero-form.vtl");
+          return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+
+     post("/squad-heros", (request, response) -> {
+         Map<String, Object> model = new HashMap<String, Object>();
+         Squad squad = Squad.find(Integer.parseInt(request.queryParams("squad-H-id")));
+         String name = request.queryParams("name");
+         int max = Integer.parseInt(request.queryParams("max"));
+         String powers = request.queryParams("powers");
+         String weakness = request.queryParams("weakness");
+         Hero newHero = new Hero(name, max, powers, weakness);
+         squad.addHero(newHero);
+         model.put("Message", "Hero Added Successfuly!!");
+         model.put("template", "templates/success.vtl");
+         return new ModelAndView(model, layout);
+       }, new VelocityTemplateEngine());
 
 
 
