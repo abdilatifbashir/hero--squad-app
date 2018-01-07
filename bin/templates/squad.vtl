@@ -1,11 +1,11 @@
 <h1 style="color:white;font-style:bold">$squad.getName() Heroes:</h1>
 
 #if ($squad.getHeros().size()> 0)
-<ul>
+<ol style="color:white">
   #foreach($hero in $squad.getHeros())
    <li style="font-size:20px;font-style:italic"><a href="/heros/$hero.getId()">$hero.getName()</a></li>
   #end
-</ul>
+</ol>
 #else
  <p style="color:blue">No Heroes!</p>
 #end

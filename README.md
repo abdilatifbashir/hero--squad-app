@@ -13,3 +13,7 @@
 * Java Unit Testing.
 ## licenses:MIT
 ## developed by :abdilatif bashir.
+
+## Acknowledgments
+1. My Technical Mentor-Brian Marete/bug hunter.
+2. moringa core MC6-ANDROID TRACK.
